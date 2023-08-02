@@ -5,7 +5,7 @@ jQuery(function($){
     /**
      * All the code relevant to Socket.IO is collected in the IO namespace.
      *
-     * @type {{init: Function, bindEvents: Function, onConnected: Function, onNewGameCreated: Function, playerJoinedRoom: Function, beginNewGame: Function, onNewWordData: Function, hostCheckAnswer: Function, gameOver: Function, error: Function}}
+     * @type {{init: Function, bindEvents: Function, onConnected: Function, onNewSessionCreated: Function, playerJoinedRoom: Function, beginNewGame: Function, onNewWordData: Function, hostCheckAnswer: Function, gameOver: Function, error: Function}}
      */
     var IO = {
 
@@ -24,7 +24,7 @@ jQuery(function($){
          */
         bindEvents : function() {
             IO.socket.on('connected', IO.onConnected );
-            IO.socket.on('newGameCreated', IO.onNewGameCreated );
+            IO.socket.on('newSessionCreated', IO.onNewSessionCreated );
             IO.socket.on('playerJoinedRoom', IO.playerJoinedRoom );
             IO.socket.on('beginNewGame', IO.beginNewGame );
             IO.socket.on('newWordData', IO.onNewWordData);
@@ -46,7 +46,7 @@ jQuery(function($){
          * A new game has been created and a random game ID has been generated.
          * @param data {{ gameId: int, mySocketId: * }}
          */
-        onNewGameCreated : function(data) {
+        onNewSessionCreated : function(data) {
             App.Host.gameInit(data);
         },
 
@@ -282,7 +282,8 @@ jQuery(function($){
                 App.Host.numPlayersInRoom += 1;
 
                 // If two players have joined, start the game!
-                if (App.Host.numPlayersInRoom === 2) {
+                // This is the conditional for when to start the session!! ***
+                if (App.Host.numPlayersInRoom === 3) {
                     // console.log('Room is full. Almost ready!');
 
                     // Let the server know that two players are present.

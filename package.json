@@ -1,6 +1,6 @@
 {
-  "name": "Anagrammatix",
-  "description": "Anagram Multiplayer Game",
+  "name": "tastebuds",
+  "description": "Multiuser Tinder-esque restuarant app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ericterpstra/anagrammatix.git"
+    "url": "https://github.com/MelMott/tastebuds.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ericterpstra/anagrammatix/issues"
+    "url": "https://github.com/MelMott/tastebuds/issues"
   },
-  "homepage": "https://github.com/ericterpstra/anagrammatix"
+  "homepage": "https://github.com/MelMott/tastebuds"
 }
