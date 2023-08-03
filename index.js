@@ -7,7 +7,7 @@ var path = require('path');
 // Create a new instance of Express
 var app = express();
 
-// Import the Anagrammatix game file.
+// Import the Tastebuds game file.
 var cards = require('./cardsession');
 
 // Create a simple Express application

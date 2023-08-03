@@ -55,7 +55,7 @@ function hostPrepareGame(gameId) {
         gameId : gameId
     };
     //console.log("All Players Present. Preparing game...");
-    io.sockets.in(data.gameId).emit('beginNewGame', data);
+    io.sockets.in(data.gameId).emit('beginNewSession', data);
 }
 
 /*
