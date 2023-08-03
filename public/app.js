@@ -8,7 +8,7 @@ jQuery(function($){
      * @type {{init: Function, bindEvents: Function, onConnected: Function, onNewSessionCreated: Function, playerJoinedRoom: Function, beginNewGame: Function, onNewWordData: Function, hostCheckAnswer: Function, gameOver: Function, error: Function}}
      */
     var IO = {
-
+// MEMEMEMEMEMME
         /**
          * This is called when the page is displayed. It connects the Socket.IO client
          * to the Socket.IO server
