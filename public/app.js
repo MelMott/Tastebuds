@@ -5,10 +5,10 @@ jQuery(function($){
     /**
      * All the code relevant to Socket.IO is collected in the IO namespace.
      *
-     * @type {{init: Function, bindEvents: Function, onConnected: Function, onNewSessionCreated: Function, playerJoinedRoom: Function, beginNewGame: Function, onNewWordData: Function, hostCheckAnswer: Function, gameOver: Function, error: Function}}
+     * @type {{init: Function, bindEvents: Function, onConnected: Function, onNewSessionCreated: Function, playerJoinedRoom: Function, beginNewSession: Function, onNewWordData: Function, hostCheckAnswer: Function, gameOver: Function, error: Function}}
      */
     var IO = {
-// MEMEMEMEMEMME
+
         /**
          * This is called when the page is displayed. It connects the Socket.IO client
          * to the Socket.IO server
@@ -26,7 +26,7 @@ jQuery(function($){
             IO.socket.on('connected', IO.onConnected );
             IO.socket.on('newSessionCreated', IO.onNewSessionCreated );
             IO.socket.on('playerJoinedRoom', IO.playerJoinedRoom );
-            IO.socket.on('beginNewGame', IO.beginNewGame );
+            IO.socket.on('beginNewSession', IO.beginNewSession );
             IO.socket.on('newWordData', IO.onNewWordData);
             IO.socket.on('hostCheckAnswer', IO.hostCheckAnswer);
             IO.socket.on('gameOver', IO.gameOver);
@@ -68,7 +68,7 @@ jQuery(function($){
          * Both players have joined the game.
          * @param data
          */
-        beginNewGame : function(data) {
+        beginNewSession : function(data) {
             App[App.myRole].gameCountdown(data);
         },
 
