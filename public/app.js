@@ -283,7 +283,7 @@ jQuery(function($){
 
                 // If two players have joined, start the game!
                 // This is the conditional for when to start the session!! ***
-                if (App.Host.numPlayersInRoom === 3) {
+                if (App.Host.numPlayersInRoom === 50) {
                     // console.log('Room is full. Almost ready!');
 
                     // Let the server know that two players are present.
